@@ -97,5 +97,34 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .blob {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+  .blob-2 {
+    border-radius: 63% 37% 38% 62% / 49% 56% 44% 51%;
+  }
+  .blob-3 {
+    border-radius: 38% 62% 56% 44% / 58% 42% 58% 42%;
+  }
+  /* формы "успокаиваются" по мере прокрутки */
+  .calm-shape {
+    transition:
+      transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-radius 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 1.2s ease;
+  }
+  .calmed .calm-shape {
+    border-radius: 50% !important;
+    transform: rotate(0deg) scale(0.92) !important;
+    opacity: 0.55;
   }
 }
